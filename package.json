@@ -1,0 +1,39 @@
+{
+  "name": "react-scroll-shadow",
+  "version": "0.0.1",
+  "description": "react-scroll-shadow",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "webpack -w",
+    "dev": "webpack-dev-server",
+    "test": "jest",
+    "test-ci": "jest --runInBand --coverage",
+    "build": "webpack -p",
+    "release": "npm version patch && git push --tags && git push && npm publish",
+    "prepublishOnly": "test-ci && yarn build"
+  },
+  "repository": "git@github.com:zzarcon/react-scroll-shadow.git",
+  "author": "Hector Leon Zarco Garcia <hezarco@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^21.1.5",
+    "@types/react": "^16.0.19",
+    "@types/react-dom": "^16.0.2",
+    "awesome-typescript-loader": "^3.3.0",
+    "jest": "^21.2.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.5"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "jest": {
+    "resetMocks": true
+  },
+  "dependencies": {
+    "styled-components": "^2.2.4"
+  }
+}
