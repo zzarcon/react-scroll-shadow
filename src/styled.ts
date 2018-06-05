@@ -1,56 +1,79 @@
 import styled from 'styled-components';
 
 export interface ScrollableWrapperProps {
-  bottomShadow?: string;  
+  size: number;
+  topShadowActiveColor: string;
+  bottomShadowActiveColor: string;
 }
 
 export interface ScrollableContentProps {
-  bottomShadow?: string;
-}
-
-export interface BottomShadowProps {
-  shadowColor?: string;
+  size: number;
+  topShadowInactiveColor: string;
+  bottomShadowInactiveColor: string;
 }
 
 export const ScrollableWrapper = styled.div`
-  position: relative;
-`;
-
-export const ScrollableContent = styled.div`
-  overflow-y: scroll;
-  overflow-x: hidden;
   display: flex;
-  flex-direction: column;
-  height: 100%;
-
-  &:after {
+  flex: 1 1 auto;
+  width: 100%;
+  position: relative;
+  // Next line is important hack/fix for Firefox
+  // https://stackoverflow.com/questions/28636832/firefox-overflow-y-not-working-with-nested-flexbox
+  min-height:0;
+  
+  &::before{
     content: '';
-    height: 2px;
-    width: 100%;
-    background: ${(props: ScrollableContentProps) => props.bottomShadow || 'white'};
-    position: relative;
-    z-index: 23;
-    display: flex;
-    flex: 1;
-    border: 2px solid ${(props: ScrollableContentProps) => props.bottomShadow || 'white'};
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    height: ${({size}: ScrollableWrapperProps) => size}px;
+    background: ${({topShadowActiveColor}: ScrollableWrapperProps) => topShadowActiveColor};
+    z-index: 10;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height: ${({size}: ScrollableWrapperProps) => size}px;
+    background: ${({bottomShadowActiveColor}: ScrollableWrapperProps) => bottomShadowActiveColor};
+    z-index: 10;
   }
 `;
 
-export const ShadowContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-`;
-
-export const BottomShadow = styled.div`
-  bottom: 0;
-  left: 0;
-  background-color: ${(props: BottomShadowProps) => props.shadowColor || 'red'};
-  width: inherit;
-  height: 2px;
-  position: absolute;
-  z-index: 1;
+export const ScrollableContent = styled.div`
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  display: flex;
+  flex-direction: column; 
+  
+  &::before{
+    content: '';
+    height: ${({size}: ScrollableContentProps) => size}px;
+    width: 100%;
+    background: ${({topShadowInactiveColor}: ScrollableContentProps) => topShadowInactiveColor};
+    flex-shrink: 0;
+  
+    z-index: 11;  
+    // Next line is important hack/fix for Safari
+    // https://stackoverflow.com/questions/40895387/z-index-not-working-on-safari-fine-on-firefox-and-chrome
+    transform: translate3d(0,0,0);  
+  }
+  &::after{
+    content: '';
+    height: ${({size}: ScrollableContentProps) => size}px;;
+    width: 100%;
+    background: ${({bottomShadowInactiveColor}: ScrollableContentProps) => bottomShadowInactiveColor};
+    flex-grow: 1;
+    flex-shrink: 0;
+    
+    z-index: 11;  
+    // Next line is important hack/fix for Safari
+    // https://stackoverflow.com/questions/40895387/z-index-not-working-on-safari-fine-on-firefox-and-chrome
+    transform: translate3d(0,0,0);
+  }
 `;

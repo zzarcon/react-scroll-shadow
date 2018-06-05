@@ -1,34 +1,51 @@
 import * as React from 'react';
 import {Component} from 'react';
-import {ScrollableContent, ScrollableWrapper, ShadowContainer, BottomShadow} from './styled';
+import {ScrollableContent, ScrollableWrapper} from './styled';
+
+export interface ShaddowColors {
+  inactive: string;
+  active: string;
+}
 
 export interface ScrollShadowProps {
   height?: string;
-  bottomShadowInactiveColor?: string;
-  bottomShadowActiveColor?: string;
-  shadowSize?: number; // TODO: Implement shadow height
+  bottomShadowColors?: ShaddowColors;
+  topShadowColors?: ShaddowColors;
+  shadowSize?: number;
 }
 
-export interface ScrollShadowState {
-  
-}
-
-export class ScrollShadow extends Component<ScrollShadowProps, ScrollShadowState> {
+export class ScrollShadow extends Component<ScrollShadowProps> {
+  static defaultProps = {
+    shadowSize: 2,
+    bottomShadowColors: {
+      inactive: 'white',
+      active: 'gray'
+    },
+    topShadowColors: {
+      inactive: 'white',
+      active: 'gray'
+    }
+  };
   render() {
-    const {children, height, bottomShadowInactiveColor, bottomShadowActiveColor} = this.props;
+    const {
+      children,
+      height,
+      bottomShadowColors,
+      topShadowColors,
+      shadowSize
+    } = this.props;
     const style = {height};
-
-    // TODO: Support top and bottom shadows based on properties
 
     return (
       <ScrollableWrapper
-        bottomShadow={bottomShadowActiveColor}
+        size={shadowSize}
+        topShadowActiveColor={topShadowColors.active}
+        bottomShadowActiveColor={bottomShadowColors.active}
       >
-        <ShadowContainer>
-          <BottomShadow />
-        </ShadowContainer>
         <ScrollableContent
-          bottomShadow={bottomShadowInactiveColor}
+          size={shadowSize}
+          topShadowInactiveColor={topShadowColors.inactive}
+          bottomShadowInactiveColor={bottomShadowColors.inactive}
           style={style}
         >
           {children}
