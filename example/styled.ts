@@ -6,21 +6,21 @@ export const Item = styled.div`
 `;
 
 export const AppWrapper = styled.div`
-  background: aliceblue;
-  height: 80vh;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 3px;
-  padding: 10px;
+  height: 100%;
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const AppHeader = styled.div`
-  // background: cadetblue;
-  padding: 5px;
-  text-align: center;
+  flex-shrink: 0;
+  height: 40px;
+  width: 100%;
 `;
 
 export const AppFooter = styled.div`
-  padding: 5px;
-  text-align: center;
+  flex-shrink: 0;
+  height: 40px;
+  width: 100%;
 `;

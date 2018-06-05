@@ -5,17 +5,26 @@ import {Item, AppWrapper, AppHeader, AppFooter} from './styled';
 
 export default class App extends Component {
   render() {
-    const items = Array(20).fill().map((value, key) => 
-      <Item key={key}>{key}</Item>
-    );
+    const items = [];
+    for (let i = 0; i < 40; i++) {
+      items.push(<Item key={i}>{i}</Item>);
+    }
 
     return (
       <AppWrapper>
         <AppHeader>Header</AppHeader>
         <ScrollShadow
-          height='300px'
-          bottomShadowInactiveColor='aliceblue'
-          bottomShadowActiveColor='blue'
+          bottomShadowColors={{
+            active: 'red',
+            inactive: 'white'
+          }}
+
+          topShadowColors={{
+            active: 'blue',
+            inactive: 'white'
+          }}
+
+          shadowSize={3}
         >
           {items}
         </ScrollShadow>
