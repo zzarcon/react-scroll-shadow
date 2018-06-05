@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+// @ts-ignore: unused variable
+// prettier-ignore
+import { HTMLAttributes, ClassAttributes } from 'react';
 
 export interface ScrollableWrapperProps {
   size: number;

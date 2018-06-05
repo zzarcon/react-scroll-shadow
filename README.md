@@ -4,10 +4,10 @@
 </div>
 
 # react-scroll-shadow
-| Pure CSS solution for adding shadows/keys to indicate more content above or bellow in scrollable area.
+> Pure CSS solution for adding shadows/keys to indicate more content above or bellow in scrollable area.
 
 ## Install 
-`npm i react-scroll-shadow`
+`yarn add react-scroll-shadow`
 
 ## Usage
 ```tsx
