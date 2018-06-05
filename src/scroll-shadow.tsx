@@ -18,12 +18,12 @@ export class ScrollShadow extends Component<ScrollShadowProps> {
   static defaultProps = {
     shadowSize: 2,
     bottomShadowColors: {
-      inactive: 'gray',
-      active: 'white'
+      inactive: 'white',
+      active: 'gray'
     },
     topShadowColors: {
-      inactive: 'gray',
-      active: 'white'
+      inactive: 'white',
+      active: 'gray'
     }
   };
   render() {
