@@ -10,7 +10,7 @@
 `npm i react-scroll-shadow`
 
 ## Usage
-```
+```tsx
 import ScrollShadow from 'react-scroll-shadow';
 
 <ScrollShadow
