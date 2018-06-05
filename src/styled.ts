@@ -51,8 +51,6 @@ export const ScrollableContent = styled.div`
   display: flex;
   flex-direction: column; 
   
-  
-  
   &::before{
     content: '';
     height: ${({size}: ScrollableContentProps) => size}px;
