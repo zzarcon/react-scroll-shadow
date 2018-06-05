@@ -47,20 +47,23 @@ export const ScrollableContent = styled.div`
   flex: 1 1 auto;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 11;
+  
   display: flex;
   flex-direction: column; 
   
-  // Next line is important hack/fix for Safari
-  // https://stackoverflow.com/questions/40895387/z-index-not-working-on-safari-fine-on-firefox-and-chrome
-  transform: translate3d(0,0,0);
+  
   
   &::before{
     content: '';
     height: ${({size}: ScrollableContentProps) => size}px;
     width: 100%;
     background: ${({topShadowInactiveColor}: ScrollableContentProps) => topShadowInactiveColor};
-    flex-shrink: 0;  
+    flex-shrink: 0;
+  
+    z-index: 11;  
+    // Next line is important hack/fix for Safari
+    // https://stackoverflow.com/questions/40895387/z-index-not-working-on-safari-fine-on-firefox-and-chrome
+    transform: translate3d(0,0,0);  
   }
   &::after{
     content: '';
@@ -69,5 +72,10 @@ export const ScrollableContent = styled.div`
     background: ${({bottomShadowInactiveColor}: ScrollableContentProps) => bottomShadowInactiveColor};
     flex-grow: 1;
     flex-shrink: 0;
+    
+    z-index: 11;  
+    // Next line is important hack/fix for Safari
+    // https://stackoverflow.com/questions/40895387/z-index-not-working-on-safari-fine-on-firefox-and-chrome
+    transform: translate3d(0,0,0);
   }
 `;
