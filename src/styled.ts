@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export interface ScrollableWrapperProps {
   size: number;
-  topShadowInactiveColor: string;
-  bottomShadowInactiveColor: string;
+  topShadowActiveColor: string;
+  bottomShadowActiveColor: string;
 }
 
 export interface ScrollableContentProps {
   size: number;
-  topShadowActiveColor: string;
-  bottomShadowActiveColor: string;
+  topShadowInactiveColor: string;
+  bottomShadowInactiveColor: string;
 }
 
 export const ScrollableWrapper = styled.div`
@@ -28,7 +28,7 @@ export const ScrollableWrapper = styled.div`
     left:0;
     right:0;
     height: ${({size}: ScrollableWrapperProps) => size}px;
-    background: ${({topShadowInactiveColor}: ScrollableWrapperProps) => topShadowInactiveColor};
+    background: ${({topShadowActiveColor}: ScrollableWrapperProps) => topShadowActiveColor};
     z-index: 10;
   }
   &::after{
@@ -38,7 +38,7 @@ export const ScrollableWrapper = styled.div`
     left:0;
     right:0;
     height: ${({size}: ScrollableWrapperProps) => size}px;
-    background: ${({bottomShadowInactiveColor}: ScrollableWrapperProps) => bottomShadowInactiveColor};
+    background: ${({bottomShadowActiveColor}: ScrollableWrapperProps) => bottomShadowActiveColor};
     z-index: 10;
   }
 `;
@@ -55,7 +55,7 @@ export const ScrollableContent = styled.div`
     content: '';
     height: ${({size}: ScrollableContentProps) => size}px;
     width: 100%;
-    background: ${({topShadowActiveColor}: ScrollableContentProps) => topShadowActiveColor};
+    background: ${({topShadowInactiveColor}: ScrollableContentProps) => topShadowInactiveColor};
     flex-shrink: 0;
   
     z-index: 11;  
@@ -67,7 +67,7 @@ export const ScrollableContent = styled.div`
     content: '';
     height: ${({size}: ScrollableContentProps) => size}px;;
     width: 100%;
-    background: ${({bottomShadowActiveColor}: ScrollableContentProps) => bottomShadowActiveColor};
+    background: ${({bottomShadowInactiveColor}: ScrollableContentProps) => bottomShadowInactiveColor};
     flex-grow: 1;
     flex-shrink: 0;
     

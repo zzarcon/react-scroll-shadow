@@ -39,13 +39,13 @@ export class ScrollShadow extends Component<ScrollShadowProps> {
     return (
       <ScrollableWrapper
         size={shadowSize}
-        topShadowInactiveColor={topShadowColors.inactive}
-        bottomShadowInactiveColor={bottomShadowColors.inactive}
+        topShadowActiveColor={topShadowColors.active}
+        bottomShadowActiveColor={bottomShadowColors.active}
       >
         <ScrollableContent
           size={shadowSize}
-          topShadowActiveColor={topShadowColors.active}
-          bottomShadowActiveColor={bottomShadowColors.active}
+          topShadowInactiveColor={topShadowColors.inactive}
+          bottomShadowInactiveColor={bottomShadowColors.inactive}
           style={style}
         >
           {children}
