@@ -18,7 +18,7 @@ type AppState = ShadowPosition & {
 
 const items: ReactNode[] = [];
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
   items.push(<Item key={i}>{i}</Item>);
 }
 
@@ -55,16 +55,16 @@ export default class App extends Component<AppProps, AppState> {
       <AppWrapper>
         <ColorsWrapper>
           <ColorWrapper>
-            Top shadow active: <input type="color" value={topShadowColors.active} onChange={this.onColorChange('topShadowColors', 'active')} />
+            Top shadow active <input type="color" value={topShadowColors.active} onChange={this.onColorChange('topShadowColors', 'active')} />
           </ColorWrapper>
           <ColorWrapper>
-            Top shadow inactive: <input type="color" value={topShadowColors.inactive} onChange={this.onColorChange('topShadowColors', 'inactive')} />
+            Top shadow inactive <input type="color" value={topShadowColors.inactive} onChange={this.onColorChange('topShadowColors', 'inactive')} />
           </ColorWrapper>
           <ColorWrapper>
-            Bottom shadow active: <input type="color" value={bottomShadowColors.active} onChange={this.onColorChange('bottomShadowColors', 'active')} />
+            Bottom shadow active <input type="color" value={bottomShadowColors.active} onChange={this.onColorChange('bottomShadowColors', 'active')} />
           </ColorWrapper>
           <ColorWrapper>
-            Bottom shadow inactive: <input type="color" value={bottomShadowColors.inactive} onChange={this.onColorChange('bottomShadowColors', 'inactive')} />
+            Bottom shadow inactive <input type="color" value={bottomShadowColors.inactive} onChange={this.onColorChange('bottomShadowColors', 'inactive')} />
           </ColorWrapper>
         </ColorsWrapper>
         <ScrollWrapper>

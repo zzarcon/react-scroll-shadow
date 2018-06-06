@@ -20,6 +20,7 @@ injectGlobal`
 export const Item = styled.div`
   border-bottom: 1px solid #ccc;
   padding: 15px;
+  margin: 0 20px;
 `;
 
 export const AppWrapper = styled.div`
@@ -46,6 +47,10 @@ export const AppHeader = styled.div`
   height: 40px;
   width: 100%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
 `;
 
 export const AppFooter = styled.div`
@@ -53,6 +58,10 @@ export const AppFooter = styled.div`
   height: 40px;
   width: 100%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
 `;
 
 export const ColorWrapper = styled.div`
@@ -61,16 +70,21 @@ export const ColorWrapper = styled.div`
   height: 50px;
   border-bottom: 1px solid #ccc;
   align-items: center;
+
+  input {
+    margin-left: 10px;
+  }
 `;
 
 export const ColorsWrapper = styled.div`
   overflow: auto;
   padding: 20px;
+  border-right: 1px solid #e2e2e2;
 `;
 
 export const ScrollWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
+  margin: 0 30px;
 `;
