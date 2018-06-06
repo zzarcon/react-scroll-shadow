@@ -88,3 +88,27 @@ export const ScrollWrapper = styled.div`
   flex-direction: column;
   margin: 0 30px;
 `;
+
+export const Title = styled.a`
+  border-bottom: 2px dashed;
+  color: #f4d6db;
+  margin: 0;
+  font-size: 23px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    border-bottom-style: solid;
+  }
+`;
+
+export const ShadowSize = styled.input`
+  outline: none;
+  margin: 15px;
+  width: 50px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+`;

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {Component, ReactNode, ChangeEvent} from 'react';
+import GHCorner from 'react-gh-corner';
 import ScrollShadow, { ShaddowColors } from '../src';
-import {ScrollWrapper, Item, AppWrapper, AppHeader, AppFooter, ColorWrapper, ColorsWrapper} from './styled';
+import {ShadowSize, Title, ScrollWrapper, Item, AppWrapper, AppHeader, AppFooter, ColorWrapper, ColorsWrapper} from './styled';
 
 interface AppProps {
 
@@ -22,6 +23,7 @@ for (let i = 0; i < 20; i++) {
   items.push(<Item key={i}>{i}</Item>);
 }
 
+const repoUrl = 'https://github.com/zzarcon/react-circle';
 
 export default class App extends Component<AppProps, AppState> {
   state: AppState = {
@@ -48,12 +50,21 @@ export default class App extends Component<AppProps, AppState> {
     } as any);
   }
 
+  onShadowSizeChange = (e: any) => {
+    const shadowSize = e.target.value;
+    this.setState({shadowSize});
+  }
+
   render() {
     const {bottomShadowColors, topShadowColors, shadowSize} = this.state;
 
     return (
       <AppWrapper>
+        <GHCorner href={repoUrl} />
         <ColorsWrapper>
+          <Title href={repoUrl}>
+            🕸 react-scroll-shadow 🕸
+          </Title>
           <ColorWrapper>
             Top shadow active <input type="color" value={topShadowColors.active} onChange={this.onColorChange('topShadowColors', 'active')} />
           </ColorWrapper>
@@ -66,6 +77,8 @@ export default class App extends Component<AppProps, AppState> {
           <ColorWrapper>
             Bottom shadow inactive <input type="color" value={bottomShadowColors.inactive} onChange={this.onColorChange('bottomShadowColors', 'inactive')} />
           </ColorWrapper>
+          Shadow size <ShadowSize value={shadowSize} onChange={this.onShadowSizeChange} type="number" />
+
         </ColorsWrapper>
         <ScrollWrapper>
           <AppHeader>Header</AppHeader>

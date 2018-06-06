@@ -19,6 +19,7 @@
   "author": "Hector Leon Zarco Garcia <hezarco@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "react-gh-corner": "^1.0.1",
     "ts-react-toolbox": "^0.1.10"
   },
   "dependencies": {
