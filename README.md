@@ -2,7 +2,7 @@
 > Pure CSS solution for adding shadows/keys to indicate more content above or bellow in scrollable area.
 
 <div align="center">
-  <img src="demo.gif" alt="Logo" width="800">
+  <img src="demo.gif" alt="demo">
   <br><br>
 </div>
 
