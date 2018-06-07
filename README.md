@@ -6,17 +6,29 @@
   <br><br>
 </div>
 
-# Demo
+# Demo 🍿
 
 [https://zzarcon.github.io/react-scroll-shadow](https://zzarcon.github.io/react-scroll-shadow)
 
-# Install 
+# Install 🚀
 
 ```
 $ yarn add react-scroll-shadow
 ```
 
-# Usage
+# Usage ⛏
+
+**Basic** 
+
+```tsx
+import ScrollShadow from 'react-scroll-shadow';
+
+<ScrollShadow>
+  Content
+</ScrollShadow>
+```
+
+**Custom**
 
 ```tsx
 import ScrollShadow from 'react-scroll-shadow';
@@ -36,4 +48,20 @@ import ScrollShadow from 'react-scroll-shadow';
 </ScrollShadow>
 ```
 
-See `example/` for full example.
+# Api 📚
+
+```ts
+interface ShaddowColors {
+  inactive: string;
+  active: string;
+}
+
+interface Props {
+  height?: string;
+  bottomShadowColors?: ShaddowColors;
+  topShadowColors?: ShaddowColors;
+  shadowSize?: number;
+}
+```
+
+See [example/](https://github.com/zzarcon/react-scroll-shadow/tree/master/example) for full example.
