@@ -23,7 +23,7 @@ for (let i = 0; i < 20; i++) {
   items.push(<Item key={i}>{i}</Item>);
 }
 
-const repoUrl = 'https://github.com/zzarcon/react-circle';
+const repoUrl = 'https://github.com/zzarcon/react-scroll-shadow';
 
 export default class App extends Component<AppProps, AppState> {
   state: AppState = {
