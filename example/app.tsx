@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Component, ReactNode, ChangeEvent} from 'react';
 import GHCorner from 'react-gh-corner';
-import ScrollShadow, { ShaddowColors } from '../src';
+import ScrollShadow, { ShadowColors } from '../src';
 import {ShadowSize, Title, ScrollWrapper, Item, AppWrapper, AppHeader, AppFooter, ColorWrapper, ColorsWrapper} from './styled';
 
 interface AppProps {
@@ -9,8 +9,8 @@ interface AppProps {
 }
 
 interface ShadowPosition {
-  bottomShadowColors: ShaddowColors;
-  topShadowColors: ShaddowColors;
+  bottomShadowColors: ShadowColors;
+  topShadowColors: ShadowColors;
 }
 
 type AppState = ShadowPosition & {
@@ -38,9 +38,9 @@ export default class App extends Component<AppProps, AppState> {
     shadowSize: 2
   };
 
-  onColorChange = (position: keyof ShadowPosition, property: keyof ShaddowColors) => (e: ChangeEvent<HTMLInputElement>) => {
+  onColorChange = (position: keyof ShadowPosition, property: keyof ShadowColors) => (e: ChangeEvent<HTMLInputElement>) => {
     const color = e.target.value;
-    const shadowColors: ShaddowColors = {
+    const shadowColors: ShadowColors = {
       ...this.state[position],
       [property]: color
     };

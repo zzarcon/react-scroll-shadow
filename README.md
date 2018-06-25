@@ -51,15 +51,15 @@ import ScrollShadow from 'react-scroll-shadow';
 # Api 📚
 
 ```ts
-interface ShaddowColors {
+interface ShadowColors {
   inactive: string;
   active: string;
 }
 
 interface Props {
   height?: string;
-  bottomShadowColors?: ShaddowColors;
-  topShadowColors?: ShaddowColors;
+  bottomShadowColors?: ShadowColors;
+  topShadowColors?: ShadowColors;
   shadowSize?: number;
 }
 ```
