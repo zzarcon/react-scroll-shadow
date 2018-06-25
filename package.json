@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-shadow",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Pure CSS solution for adding shadows/keys to indicate more content above or bellow in scrollable area",
   "main": "dist/index.js",
   "scripts": {
