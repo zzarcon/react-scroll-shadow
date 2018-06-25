@@ -2,15 +2,15 @@ import * as React from 'react';
 import {Component} from 'react';
 import {ScrollableContent, ScrollableWrapper} from './styled';
 
-export interface ShaddowColors {
+export interface ShadowColors {
   inactive: string;
   active: string;
 }
 
 export interface ScrollShadowProps {
   height?: string;
-  bottomShadowColors?: ShaddowColors;
-  topShadowColors?: ShaddowColors;
+  bottomShadowColors?: ShadowColors;
+  topShadowColors?: ShadowColors;
   shadowSize?: number;
 }
 
