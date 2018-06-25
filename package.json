@@ -1,7 +1,7 @@
 {
   "name": "react-scroll-shadow",
   "version": "1.0.1",
-  "description": "Pure CSS solution for adding shadows/keys to indicate more content above or bellow in scrollable area",
+  "description": "Pure CSS shadow to indicate more content in scrollable area",
   "main": "dist/index.js",
   "scripts": {
     "bootstrap": "ts-react-toolbox init",
