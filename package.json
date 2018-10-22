@@ -2,7 +2,7 @@
   "name": "react-scroll-shadow",
   "version": "1.0.1",
   "description": "Pure CSS shadow to indicate more content in scrollable area",
-  "main": "dist/index.js",
+  "main": "dist/es5/index.js",
   "scripts": {
     "bootstrap": "ts-react-toolbox init",
     "dev": "ts-react-toolbox dev",
@@ -19,19 +19,17 @@
   "author": "Hector Leon Zarco Garcia <hezarco@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "react-gh-corner": "^1.0.1",
-    "ts-react-toolbox": "^0.1.10"
+    "ts-react-toolbox": "^0.1.22"
   },
-  "dependencies": {
-    "styled-components": "^2.2.4"
-  },
+  "dependencies": {},
   "engines": {
     "node": ">=8.5.0"
   },
   "peerDependencies": {
-    "react": "^16.3.0"
+    "react": "^16.3.0",
+    "styled-components": "^3.4.10"
   },
-  "types": "dist/index.d.ts",
+  "types": "dist/es5/index.d.ts",
   "files": [
     "dist"
   ],
@@ -45,5 +43,7 @@
     "pure-css",
     "scrollable",
     "scrollbar"
-  ]
+  ],
+  "jsnext:main": "dist/es2015/index.js",
+  "module": "dist/es2015/index.js"
 }
