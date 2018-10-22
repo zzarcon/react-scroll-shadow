@@ -6163,10 +6163,6 @@ react-dom@^16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-gh-corner@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-gh-corner/-/react-gh-corner-1.0.1.tgz#b6b0745ef3d12b2c7e79b2fb8c5219fea1d1d348"
-
 react-gh-corner@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/react-gh-corner/-/react-gh-corner-1.1.2.tgz#f6b7ba9b83ab7f47f314d8e04fcdb529b5707a03"
@@ -7125,7 +7121,7 @@ strip-url-auth@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/strip-url-auth/-/strip-url-auth-1.0.1.tgz#22b0fa3a41385b33be3f331551bbb837fa0cd7ae"
 
-styled-components@^3.3.2:
+styled-components@^3.3.2, styled-components@^3.4.10:
   version "3.4.10"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.4.10.tgz#9a654c50ea2b516c36ade57ddcfa296bf85c96e1"
   dependencies:
