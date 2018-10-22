@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-shadow",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Pure CSS shadow to indicate more content in scrollable area",
   "main": "dist/es5/index.js",
   "scripts": {
